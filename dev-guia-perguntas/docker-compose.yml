@@ -5,7 +5,9 @@ volumes:
 services:
   db:
     container_name: perguntasdb
-    image: mysql:5.7
+    image: mysql:latest
+    cap_add:
+      - SYS_NICE  # CAP_SYS_NICE
     ports:
       - "3306:3306"
     volumes:
